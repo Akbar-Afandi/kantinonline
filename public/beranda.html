@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantin Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body class="select-none">
+    <header class="bg-white w-full h-16 flex justify-between items-center fixed top-0 left-0 right-0 border-b-[.5px]">
+        <h1 class="text-2xl italic ml-4">kantinonline</h1>
+        <nav class="mr-4">
+            <ul class="flex gap-1.5">
+                <li>
+                    <a class="text-2xl block">
+                        <i class="fa-regular fa-house "></i><p class="hidden">Beranda</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-2xl block"><i class="fa-solid fa-book-open"></i></a>
+                </li>
+                <li>
+                    <a class="text-2xl block" id="test">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    </main>
+    <script>
+      const loggedInUser = localStorage.getItem("loggedInUser")
+      const test = document.getElementById("test")
+      
+      test.addEventListener("click", () => {
+        localStorage.removeItem("loggedInUser")
+        window.location.href = "index.html"
+      })
+      
+      if(!loggedInUser) {
+        window.location.href = "index.html"
+      }
+    </script>
+</body>
+</html>
+
+<!--  npx @tailwindcss/cli -i ./src/input.css -o ./public/css/style.css --watch -->

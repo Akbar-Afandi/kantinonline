@@ -7,47 +7,89 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
-<body class="select-none min-h-full">
-    <header class="bg-white w-full h-16 flex justify-between items-center fixed top-0 left-0 right-0 border-b-[.5px]">
-        <h1 class="text-2xl italic ml-4">kantinonline</h1>
+<body class="bg-[#fafafa] select-none min-h-full">
+    <header class="bg-white w-full h-16 flex justify-between items-center fixed top-0 left-0 right-0 border-b-[.5px] z-10">
+        <h1 class="text-2xl italic font-medium ml-4 text-orange-600">kantin<span class="text-sky-700">online!</span></h1>
         <nav class="mr-4">
             <ul class="flex gap-1.5">
                 <li>
-                    <a class="text-2xl block">
+                    <a class="text-2xl block hover:text-blue-900 transition-all duration-300 cursor-pointer">
                         <i class="fa-regular fa-house "></i><p class="hidden">Beranda</p>
                     </a>
                 </li>
                 <li>
-                    <a class="text-2xl block"><i class="fa-solid fa-book-open"></i></a>
+                    <a class="text-2xl block hover:text-blue-900 transition-all duration-300 cursor-pointer">
+                        <i class="fa-solid fa-utensils"></i>
+                    </a>
                 </li>
                 <li>
-                    <a class="text-2xl block" id="test">
+                    <a class="text-2xl block hover:text-blue-900 transition-all duration-300 cursor-pointer" id="test">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
             </ul>
         </nav>
-        <i class="fa-solid fa-circle-user text-2xl mr-4"></i>
-        <div class="fixed w-1/2 h-full bg-white border-l right-0 top-0">
-            <i class="fa-solid fa-circle-user text-7xl mr-4 ml-[50%] -translate-x-1/2 mt-8"></i>
-            <h1></h1>
+        <i id="userBtn" class="fa-solid fa-circle-user text-2xl mr-4 cursor-pointer hover:text-blue-900 transition-all duration-300"></i>
+        <div id="userMenu" class="fixed w-1/2 h-full bg-white border-l top-0 -right-full transition-all duration-300 z-20">
+            <div>
+                <i class="fa-solid fa-circle-user text-7xl mr-4 ml-[50%] -translate-x-1/2 mt-8"></i>
+                 <h1 class="text-center text-2xl font-medium mt-3">akbarafandi</h1>
+            </div>
+            <ul id="logoutBtn" class="absolute bottom-4 left-4 right-4 bg-sky-600 px-4 py-2 rounded-md hover:bg-sky-700 cursor-pointer transition-all duration-300">
+                <li>
+                    <a class="text-xl flex gap-4 justify-start items-center text-[#fafafa]">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
         </div>
     </header>
     <main>
-        
+        <div class="w-screen h-screen relative flex justify-center items-center pt-16 bg-[#f5f5f5]">
+            <div class="w-[80%] flex flex-col justify-center items-center">
+                <h1 class="text-3xl text-center font-medium mb-0.5">Pesan Makanan Di Kelas</h1>
+                <h2 class="text-2xl text-center text-orange-700 font-medium mb-1">Capek antre? Mager keluar kelas?</h2>
+                <p class="text-center mb-4">Kantin Online hadir membawa semua menu favoritmu langsung ke mejamu. Pesan, bayar, dan makan – semua cepat, mudah, dan tanpa drama!</p>
+                <button class="bg-sky-600 hover:bg-sky-700 transition-all duration-300 px-4 py-2 rounded-full text-[#fafafa] cursor-pointer">Lihat Menu</button>
+                <div class="w-screen h-[10%] bg-linear-to-b from-[#f5f5f5] to-[#fafafa] absolute bottom-0"></div>
+            </div>
+        </div>
+        <div class="w-screen h-screen pt-[4.5rem] flex flex-col items-center">
+            <h1 class="text-2xl text-orange-700 font-bold mt-12 mb-8">Pengumuman Kantin</h1>
+            <div class="w-[80%] h-[70%] bg-[#f5f5f5] rounded-lg flex items-center">
+                <div class="w-44 h-60 bg-white rounded-xl flex flex-col justify-center items-center">
+                    <img src="img/bgoren.jpg" alt="maknan">
+                    <p class="inline-block w-[80%] text-center ">Laris manis! nasi goreng, menu favorit pilihan siswa</p>
+                </div>
+            </div>
+        </div>
     </main>
     <script>
       const loggedInUser = localStorage.getItem("loggedInUser")
-      const test = document.getElementById("test")
+      const logoutBtn = document.getElementById("logoutBtn")
+      const userBtn = document.getElementById("userBtn")
+      const userMenu = document.getElementById("userMenu")
       
-      test.addEventListener("click", () => {
+      logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("loggedInUser")
-        window.location.href = "index.html"
+        window.location.reload()
       })
       
       if(!loggedInUser) {
         window.location.href = "index.html"
       }
+
+      userBtn.addEventListener("click", () => {
+        userMenu.classList.toggle("right-0")
+      })
+
+      document.addEventListener("click", (e) => {
+        if(!userMenu.contains(e.target) && !userBtn.contains(e.target)) {
+          userMenu.classList.remove("right-0")
+        }
+      })
+
     </script>
 </body>
 </html>

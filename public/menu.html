@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kantin Online</title>
+  <link rel="icon" type="img/png" href="img/icon/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+  <style type="text/tailwindcss">
+    @theme {
+      --font-poppins: "Poppins";
+    }
+  </style>
+</head>
+<body class="bg-[#fafafa] select-none font-poppins">
+  <header class="bg-gray-100 w-full h-16 flex justify-between items-center fixed top-0 bottom-0 left-0 right-0 border-[.1px] border-[rgba(0,0,0,.1)] z-10">
+    <span class="flex justify-start items-center">
+      <img src="img/icon/favicon.png" alt="icon" class="w-16 h-16">
+      <h1 class="text-lg italic font-bold text-sky-800 -translate-x-[.6rem]">kantin<span class="text-amber-700">online!</span></h1>
+    </span>
+    <nav class="mr-4">
+      <ul class="flex gap-1.5">
+        <li id="homeNav" class="bg-gray-200 px-2 py-1 rounded shadow">
+          <a class="text-md block text-gray-700 transition-all duration-300 cursor-pointer">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </li>
+        <li id="menuNav" class="bg-sky-100 px-2 py-1 rounded shadow">
+          <a class="text-md block text-sky-700 transition-all duration-300 cursor-pointer">
+            <i class="fa-solid fa-utensils"></i>
+          </a>
+        </li>
+        <li id="cartNav" class="bg-gray-200 px-2 py-1 rounded shadow">
+          <a class="text-md block text-gray-700 transition-all duration-300 cursor-pointer" id="test">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <i id="userBtn" class="fa-solid fa-circle-user text-2xl mr-4 cursor-pointer text-gray-800 transition-all duration-300"></i>
+    <div id="userMenu" class="fixed w-1/2 h-full bg-gray-100 top-0 -right-full transition-all ease-in-out duration-500 z-30">
+      <div>
+        <i class="fa-solid fa-circle-user text-7xl mr-4 ml-[50%] -translate-x-1/2 mt-8"></i>
+        <h1 id="userName" class="text-center text-xl text-gray-700 font-medium mt-3"></h1>
+      </div>
+      <ul id="logoutBtn" class="absolute bottom-4 left-4 right-4 bg-sky-600 px-4 py-2 rounded-md hover:bg-sky-700 cursor-pointer transition-all duration-300">
+        <li>
+          <a class="text-base flex gap-4 justify-start items-center text-[#fafafa]">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <main class="bg-gray-100 w-screen pt-16">
+    <div class="pt-6">
+      <div class="px-4">
+        <h1 class="text-gray-800 text-2xl font-bold">Menu</h1>
+      </div>
+      <div class="bg-gray-100 w-full mt-4 sticky top-16 py-2">
+        <ul class="flex gap-2 flex-nowrap overflow-x-scroll">
+          <li class="flex-none ml-4 px-4 py-2 bg-sky-600 text-[#fafafa] rounded-lg font-medium text-xs">
+            <a>Makanan Berat</a>
+          </li>
+          <li class="flex-none px-4 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium text-xs">
+            <a>Makanan Ringan</a>
+          </li>
+          <li class="flex-none px-4 py-2 text-xs bg-gray-200 text-gray-700 rounded-lg font-medium">
+            <a>Minuman</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-gray-200 mt-6 grid grid-cols-2 px-4 py-8 justify-items-center gap-6 h-screen overflow-y-scroll">
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+        <div class="w-40 h-64 bg-[#fafafa] shadow-md rounded-md overflow-hidden flex-none">
+          <img src="img/menu/makanan/nasigoreng.jpg" alt="nasi goreng" class="w-full h-50%">
+          <div class="px-2 pt-2">
+            <div class="px-2 mb-2">
+              <p class="inline-flex text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2 py-1 rounded-md ring-1 ring-inset ring-amber-600/20 mb-0.5">PALING LARIS</p>
+              <h1 class="text-sm text-gray-700 font-medium">Nasi Goreng</h1>
+              <p class="text-lg text-sky-700 font-bold">Rp. 8.000</p>
+            </div>
+            <button class="bg-sky-700 text-[#fafafa] w-full py-0.5 ml-[50%] -translate-x-1/2 rounded-full font-medium">Pesan</button>
+          </div>
+        </div>
+      
+    </div>
+    
+  </main>
+  
+  <footer class="bg-sky-900 w-screen px-4 pt-8 pb-4 mt-8 flex flex-col items-center">
+      <div class="w-[80%] mb-6">
+        <h1 class="text-center text-lg text-gray-200 font-medium mb-0">KantinOnline</h1>
+        <p class="text-center text-[14px] text-gray-300">Pesan makanan di kelas dengan cepat, mudah, dan tanpa antri.</p>
+      </div>
+      <div class="mb-6">
+        <h1 class="text-md text-gray-200 text-center">Bantuan & Pesanan</h1>
+        <p class="text-center text-[13px] text-gray-300">Lihat Menu</p>
+        <p class="text-center text-[13px] text-gray-300">Lihat Keranjang</p>
+        <p class="text-center text-[13px] text-gray-300">Kontak Bantuan</p>
+      </div>
+      <div class="mb-6">
+        <h1 class="text-md text-gray-200 text-center">Kontak Kami</h1>
+        <p class="text-center text-[13px] text-gray-300">Email</p>
+        <p class="text-center text-[13px] text-gray-300">Instagram</p>
+      </div>
+      <p class="text-center text-xs text-gray-400">© Copyrights 2025 Kantin Online. All Right Reserved.</p>
+    </footer>
+  <script src="js/login/validateLogin.js"></script>
+  <script src="js/login/logout.js"></script>
+  <script src="js/profile/profile.js"></script>
+  <script src="js/handleNavigate/navigation.js"></script>
+</body>
+</html>
